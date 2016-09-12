@@ -59,10 +59,10 @@ class ObjectStorageConverter extends \TYPO3\CMS\Extbase\Property\TypeConverter\O
 	}
 
 	/**
-	 * @param $propertyValue
-	 * @param $propertiesToConvert
-	 * @param $propertyName
-	 * @return mixed
+	 * @param mixed $propertyValue
+	 * @param array $propertiesToConvert
+	 * @param string $propertyName
+	 * @return array
 	 */
 	protected function preparePropertyToConvert($propertyValue, $propertiesToConvert, $propertyName) {
 		if (!$this->isUploadType($propertyValue) || $this->isSuccessfullyUploaded($propertyValue)) {
