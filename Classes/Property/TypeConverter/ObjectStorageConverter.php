@@ -65,7 +65,7 @@ class ObjectStorageConverter extends \TYPO3\CMS\Extbase\Property\TypeConverter\O
 	 * @return mixed
 	 */
 	protected function preparePropertyToConvert($propertyValue, $propertiesToConvert, $propertyName) {
-		if (!$this->isUploadType($propertyValue) || $this->isSucessfullyUploaded($propertyValue)) {
+		if (!$this->isUploadType($propertyValue) || $this->isSuccessfullyUploaded($propertyValue)) {
 			$propertiesToConvert[$propertyName] = $propertyValue;
 
 			return $propertiesToConvert;
@@ -90,7 +90,7 @@ class ObjectStorageConverter extends \TYPO3\CMS\Extbase\Property\TypeConverter\O
 	 * @param array $propertyValue
 	 * @return bool
 	 */
-	protected function isSucessfullyUploaded(array $propertyValue) {
+	protected function isSuccessfullyUploaded(array $propertyValue) {
 		return $propertyValue['error'] !== \UPLOAD_ERR_NO_FILE || isset($propertyValue['submittedFile']['resourcePointer']);
 	}
 }
